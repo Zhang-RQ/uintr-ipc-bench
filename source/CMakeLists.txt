@@ -40,6 +40,7 @@ add_subdirectory(domain)
 add_subdirectory(mq)
 add_subdirectory(signal)
 add_subdirectory(shm-sync)
+add_subdirectory(uintrfd)
 
 if (NOT APPLE)
 	add_subdirectory(eventfd)

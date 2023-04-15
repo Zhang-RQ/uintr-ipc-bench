@@ -88,8 +88,7 @@ void start_children(char *prefix, int argc, char *argv[]) {
 	// clang-format off
 	sprintf(
 		server_name,
-		"%s/%s/%s-%s",
-		build_path,
+		"/tests/ipc-bench/%s/%s-%s",
 		prefix,
 		prefix,
 		"server"
@@ -97,14 +96,16 @@ void start_children(char *prefix, int argc, char *argv[]) {
 
 	sprintf(
 		client_name,
-		"%s/%s/%s-%s",
-		build_path,
+		"/tests/ipc-bench/%s/%s-%s",
 		prefix,
 		prefix,
 		"client"
 	);
 	// clang-format on
 
+	printf("Starting Child: %s\n",server_name);
+	printf("Starting Child: %s\n",client_name);
+	
 	pid_t c1_id = start_child(server_name, argc, argv);
 	pid_t c2_id = start_child(client_name, argc, argv);
 
